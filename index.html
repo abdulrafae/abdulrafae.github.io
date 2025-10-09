@@ -1,67 +1,145 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Prof. First Last — Academic Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root{--accent:#2b7cff;--muted:#666;--bg:#f7f9fc} *{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;} body{background:var(--bg);color:#111;line-height:1.5} header{background:#fff;border-bottom:1px solid #e6eef8;padding:28px 20px;display:flex;align-items:center;gap:20px;max-width:1100px;margin:24px auto;border-radius:8px} .photo{width:96px;height:96px;border-radius:8px;background:#ddd;flex:0 0 96px;overflow:hidden} .photo img{width:100%;height:100%;object-fit:cover;display:block} .meta{flex:1} .meta h1{margin:0;font-size:1.45rem} .meta p.title{margin:6px 0;color:var(--muted)} nav{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap} nav a{color:var(--accent);text-decoration:none;font-weight:600} main{max-width:1100px;margin:18px auto;padding:0 20px;display:grid;grid-template-columns: 1fr 320px;gap:20px} section.card{background:#fff;padding:18px;border-radius:8px;border:1px solid #eef5ff} .about p{margin:0 0 8px} .research-list li, .teaching-list li{margin:10px 0} aside .contact p{margin:6px 0;color:var(--muted)} footer{max-width:1100px;margin:24px auto;text-align:center;color:var(--muted);font-size:0.9rem} /* responsive */ @media (max-width:880px){ main{grid-template-columns:1fr; padding-bottom:30px} header{flex-direction:row;gap:12px} } /* small UI touches */ .btn{display:inline-block;padding:8px 12px;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600} .pub-title{font-weight:600} .toggle{cursor:pointer;color:var(--accent);font-weight:600}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abdul Rafae Khan — Information Technology</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;font-family:Inter,system-ui,sans-serif;color:#111;background:#f9fafc;scroll-behavior:smooth;}
+aside{position:fixed;left:0;top:0;bottom:0;width:230px;background:#fff;border-right:1px solid #e2e8f0;padding:24px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between}
+.name{margin:0;font-size:1.25rem;font-family:"Source Serif 4",serif;font-weight:600}
+.subtitle{color:#555;margin-top:4px;font-size:.95rem}
+nav{margin-top:1.5em;display:flex;flex-direction:column;gap:.4em}
+nav a{color:#004aad;text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline}
+main{margin-left:230px;max-width:780px;padding:32px 28px}
+h2{font-family:"Source Serif 4",serif;font-weight:600;border-bottom:1px solid #e2e8f0;padding-bottom:.2em;margin-top:2em}
+p,li{margin:.4em 0;line-height:1.6}
+ul{padding-left:20px}
+footer{text-align:center;color:#666;font-size:.9rem;margin:3em 0}
+.toggle{cursor:pointer;color:#004aad;font-weight:600;text-decoration:none}
+#office-hours{display:none;color:#555;margin-top:8px}
+@media(max-width:750px){
+  aside{position:static;width:auto;border:0;border-bottom:1px solid #e2e8f0;flex-direction:row;flex-wrap:wrap;gap:10px;align-items:center}
+  main{margin:0;padding:20px}
+  nav{flex-direction:row;gap:10px;margin:0}
+}
+</style>
 </head>
-
 <body>
-    <header>
-        <div class="photo"><img src="https://via.placeholder.com/300x300.png?text=Photo" alt="Professor photo"></div>
-        <div class="meta">
-            <h1>Prof. First Last</h1>
-            <p class="title">Associate Professor — Department of Computer Science</p>
-            <nav> <a href="#about">About</a> <a href="#research">Research</a> <a href="#teaching">Teaching</a> <a href="#contact">Contact</a> </nav>
-        </div>
-    </header>
-    <main>
-        <section id="about" class="card about">
-            <h2>About</h2>
-            <p>Short bio paragraph. Mention research focus, current projects, and appointment details. Keep it succinct and link to full CV if needed.</p>
-            <p><strong>Selected keywords:</strong> machine learning · AI · algorithms · data science</p>
-            <p><a class="btn" href="#contact">Get in touch</a></p>
-        </section>
-        <aside class="card">
-            <div class="contact" id="contact">
-                <h3>Contact</h3>
-                <p><strong>Email:</strong> first.last@university.edu</p>
-                <p><strong>Office:</strong> Bldg 4, Room 321</p>
-                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                <p><a href="#" class="toggle" id="show-office-hours">Show office hours</a></p>
-                <div id="office-hours" style="display:none;margin-top:8px;color:var(--muted)"> Mon 10:00–12:00
-                    <br>Wed 14:00–16:00 (or by appointment) </div>
-            </div>
-        </aside>
-        <section id="research" class="card">
-            <h2>Research</h2>
-            <ul class="research-list">
-                <li><span class="pub-title">Paper A</span> — Short one-line description of the paper and its contribution.</li>
-                <li><span class="pub-title">Paper B</span> — One-sentence summary + link to PDF or DOI.</li>
-                <li><span class="pub-title">Project: Open Dataset</span> — Brief note and link to dataset repository.</li>
-            </ul>
-            <p><a href="#" class="toggle" id="more-research">Show more</a></p>
-            <div id="more-research-content" style="display:none;margin-top:12px;color:var(--muted)"> Extended research description, labs, collaborators, grants, and links to group page. </div>
-        </section>
-        <section id="teaching" class="card">
-            <h2>Teaching</h2>
-            <ul class="teaching-list">
-                <li><strong>CS 101 — Intro to Programming</strong> — Fall 2025 · Syllabus · Lectures</li>
-                <li><strong>CS 501 — Advanced Algorithms</strong> — Spring 2026 · Graduate course</li>
-            </ul>
-            <p><a href="#" class="btn">Download full CV (PDF)</a></p>
-        </section>
-    </main>
-    <footer>&copy; 2025 Prof. First Last — University Department — Last updated Oct 8, 2025</footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // smooth scrolling for internal links $('a[href^="#"]').on('click', function(e){ var target = $(this.getAttribute('href')); if(target.length){ e.preventDefault(); $('html,body').animate({scrollTop: target.offset().top - 18}, 400); } }); // toggles $('#show-office-hours').on('click', function(e){ e.preventDefault(); $('#office-hours').slideToggle(180); $(this).text(function(i,t){ return t.indexOf('Show')===0 ? 'Hide office hours' : 'Show office hours'; }); }); $('#more-research').on('click', function(e){ e.preventDefault(); $('#more-research-content').slideToggle(200); $(this).text(function(i,t){ return t.indexOf('Show')===0 ? 'Hide' : 'Show more'; }); });
-    </script>
-</body>
+<aside>
+  <div>
+    <div>
+      <h1 class="name">Abdul Rafae Khan</h1>
+      <p class="subtitle">School of Information Technology</p>
+      <p class="subtitle">Monash University</p>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research Interest</a>
+	  <a href="#publication">Publications</a>
+      <a href="#teaching">Teaching</a>
+	  <a href="#competitions">Competitions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <p style="color:#aaa;font-size:.8rem;margin-top:2em">&copy; 2025</p>
+</aside>
 
+<main>
+  <section id="about">
+    <h2>About</h2>
+    <p>I am a Lecturer (Assistant Professor equivalent) at <a href="https://www.monash.edu/">Monash University</a>. My research aims at building Trustworthy AI, with a focus on robustness and interpretability of neural models, as well as their downstream applications in Natural Language Processing (NLP). I have led teams in multiple NLP competitions, earning top honors. My research has been published in several top-tier venues in AI and NLP, including EMNLP, ICLR, and AAAI. I regularly serves as a reviewer for international conferences in my field.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research Interest</h2>
+	<ul>
+		<li>Natural Language Processing</li>
+		<li>Interpretability and Robustness</li>
+		<li>Trustworthy AI</li>
+		<li>Applied NLP</li>
+	</ul>
+  </section>
+
+  <section id="publication">
+    <h2>Publications</h2>
+    <ul>
+      <li><em>Changes by Butterflies: Farsighted Forecasting with Group Reservoir Transformer</em>, arXiV, 2024. </li>
+      <li><em>Probabilistic Robustness for Data Filtering</em>, *EACL.*, 2023.</li>
+	  <li><em>Unveiling Equity: Exploring Feature Dependency using Complex-Valued Neural Networks and Attention Mechanism for Fair Data Analysis</em>, *IEEE CloudNet*, 2023.</li>
+	  <li><em>From hybrid dialogers to neural responders</em>, *Alexa Prize SGC5*, 2023.</li>
+	  <li><em>ConceptX: A framework for latent concept analysis</em>, *AAAI*, 2023.</li>
+	  <li><em>Measuring Robustness for NLP</em>, *COLING*, 2023.</li>
+    </ul>
+    <p><a href="#" class="toggle" id="show-more">Show more</a></p>
+    <div id="more-pubs" style="display:none;color:#555">
+      <ul>
+	  <li><em>SIT at MixMT 2022: Fluent Translation Built on Giant Pre-trained Models</em>, *EMNLP*, 2022.</li>
+	  <li><em>Analyzing Encoded Concepts in Transformer Language Models</em>, *NAACL*, 2022.</li>
+	  <li><em>Discovering Latent Concepts Learned in BERT</em>, *ICLR*, 2022.</li>
+	  <li><em>Learning by Interpreting</em>, *IJCAI*, 2022.</li>
+	  <li><em>A clustering framework for lexical normalization of Roman Urdu</em>, *Journal for NLE*, 2022.</li>
+	  <li><em>Grouping words with semantic diversity</em>, *NAACL*, 2021.</li>
+	  <li><em>Deep Interpretable Criminal Charge Prediction and Algorithmic Bias.</em>, *ICML xAI*, 2021.</li>
+	  <li><em>Coding textual inputs boosts the accuracy of neural networks</em>, *EMNLP*, 2020.</li>
+	  <li><em>Diversity by Phonetics and its Application in Neural Machine Translation</em>, *arXiV*, 2019.</li>
+	  <li><em>CUNY-PKU Parser at SemEval-2019 Task 1: Cross-lingual Semantic Parsing with UCCA</em>, *SemEval*, 2019.</li>
+	  <li><em>Hunter NMT System for WMT18 Biomedical Translation Task: Transfer Learning in Neural Machine Translation</em>, *EMNLP*, 2018.</li>
+	  <li><em>An unsupervised method for discovering lexical variations in Roman Urdu informal text</em>, *EMNLP*, 2015.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+	<!--<h3>Stevens Institute of Technology</h3>-->
+    <ul>
+      <li>Artificial Intelligence</li>
+      <li>Deep Learning</li>
+    <!--</ul>
+	<h3>City University of New York</h3>
+    <ul>-->
+      <li>Introduction to Computer Science</li>
+      <li>Programming Fundamentals</li>
+    </ul>
+  </section>
+
+  <section id="competitions">
+	<h2>Competitions</h2>
+	<ul>
+	  <li>2nd place. <em>Amazon AlexaPrize Sociabot Grand Challenge 5.</em> 2023</li>
+	  <li>1st place. <em>Workshop for Machine Translation: Codemix Translation Task.</em> 2022</li>
+	  <li>2nd place. <em>SemEval Task 1: Crosslingual Semantic Parsing.</em> 2019</li>
+	  <li>1st place. <em>Workshop for Machine Translation: Biomedical Translation Task.</em> 2018</li>
+	</ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: abdul.rafae@monash.edu</p>
+    <p>Office: Room 2436 Level 4 Building 2<br>
+	<div id="office-hours">By appointment</div>
+    <!--<a href="#" class="toggle" id="toggle-hours">Show office hours</a></p>
+    <div id="office-hours">By appointment</div>-->
+  </section>
+
+  <footer>Monash University — School of Information Technology</footer>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$('#show-more').on('click', function(e){
+  e.preventDefault();
+  $('#more-pubs').slideToggle(180);
+  $(this).text(function(i,t){return t.startsWith('Show')?'Hide more':'Show more';});
+});
+$('#toggle-hours').on('click', function(e){
+  e.preventDefault();
+  $('#office-hours').slideToggle(160);
+  $(this).text(function(i,t){return t.startsWith('Show')?'Hide office hours':'Show office hours';});
+});
+</script>
+</body>
 </html>
